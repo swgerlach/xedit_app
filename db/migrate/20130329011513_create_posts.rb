@@ -5,7 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.text :description
       t.string :firstName
       t.string :lastName
-      t.datetime :birthday
+      t.date :birthday
 
       t.timestamps
     end

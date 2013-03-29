@@ -1,39 +1,31 @@
-<%= form_for @post, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :title, :class => 'control-label' %>
-    <div class="controls">
-      <%= link_to 'blank', "#", id: 'new_title', class: "myeditable editable editable-click editable-empty", data: { "original-title"=>"Enter title", name: 'title', type:"text"} %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :description, :class => 'control-label' %>
-    <div class="controls">
-      <%= link_to 'blank', "#", id: 'new_decription', class: "myeditable editable editable-click editable-empty", data: { "original-title"=>"Enter description", name: 'description', type:"textarea"} %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :firstName, :class => 'control-label' %>
-    <div class="controls">
-      <%= link_to 'blank', "#", id: 'new_firstName', class: "myeditable editable editable-click editable-empty", data: { "original-title"=>"Enter firstName", name: 'firstName', type:"text"} %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :lastName, :class => 'control-label' %>
-    <div class="controls">
-      <%= link_to 'blank', "#", id: 'new_lastName', class: "myeditable editable editable-click editable-empty", data: { "original-title"=>"Enter lastName", name: 'lastName', type:"text"} %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :birthday, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.datetime_select :birthday, :class => 'datetime_select' %>
-    </div>
-  </div>
+<table id="post">
+  <tr>
+    <td>
+      <%= link_to 'Title', "#", id: 'new_title', class: "myeditable editable editable-click editable-empty", data: { "original-title"=>"Enter title", name: 'title', type:"text", resource: "posts"} %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to 'Description', "#", id: 'new_decription', class: "myeditable editable editable-click editable-empty", data: { "original-title"=>"Enter description", name: 'description', type:"textarea"} %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to 'First', "#", id: 'new_firstName', class: "myeditable editable editable-click editable-empty", data: { "original-title"=>"Enter firstName", name: 'firstName', type:"text"} %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to 'Last', "#", id: 'new_lastName', class: "myeditable editable editable-click editable-empty", data: { "original-title"=>"Enter lastName", name: 'lastName', type:"text"} %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to '15-05-1984', "#", id: 'new_birthday', class: "myeditable editable editable-click editable-empty", data: { "original-title"=>"Enter birthday", name: 'birthday', type:"combodate", viewformat: "MM-DD-YYYY", format: "YYYY/MM/DD", value: "1984-05-15", template: 'D - MMM - YYYY' } %>
+    </td>
+  </tr>
 
-  <div class="form-actions">
-    <button class="btn btn-primary" id="save-btn">Save new user!</button>
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                posts_path, :class => 'btn' %>
-  </div>
-<% end %>
+</table>
+
+<button class="btn btn-primary" id="save-btn" type="button">Save new user!</button>
+

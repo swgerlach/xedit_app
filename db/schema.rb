@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(:version => 20130329011513) do
     t.text     "description"
     t.string   "firstName"
     t.string   "lastName"
-    t.datetime "birthday"
+    t.date     "birthday"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

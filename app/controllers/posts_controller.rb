@@ -40,7 +40,11 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
+    new_post = {}
+    Post.accessible_attributes.each do |attribute|
+      new_post[attribute] = params[attribute]
+    end
+    @post = Post.new(new_post)
 
     respond_to do |format|
       if @post.save
